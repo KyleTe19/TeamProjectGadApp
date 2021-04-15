@@ -13,6 +13,7 @@ public class OptionInterfaceForm {
     public static JFrame myFrame;
 
     public OptionInterfaceForm() {
+
         clickToContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -22,6 +23,8 @@ public class OptionInterfaceForm {
                 myFrame.setPreferredSize(new Dimension(1000, 600));
                 myFrame.pack();
                 myFrame.setVisible(true);
+
+                IntroPageForm.scenarioNumber++;
 
             }
         });

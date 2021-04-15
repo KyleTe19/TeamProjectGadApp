@@ -7,6 +7,7 @@ public class IntroPageForm {
     public JPanel welcomeForm;
     private JButton clickToStartButton;
     public static JFrame myFrame;
+    public static int scenarioNumber;
 
     public IntroPageForm() {
         clickToStartButton.addActionListener(new ActionListener() {
@@ -17,6 +18,8 @@ public class IntroPageForm {
                 myFrame.setPreferredSize(new Dimension(1000, 600));
                 myFrame.pack();
                 myFrame.setVisible(true);
+
+                scenarioNumber = 1;
 
             }
         });

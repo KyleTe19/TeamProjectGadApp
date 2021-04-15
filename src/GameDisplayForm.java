@@ -11,6 +11,7 @@ public class GameDisplayForm {
 
 
     public GameDisplayForm() {
+
         option1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,8 +36,10 @@ public class GameDisplayForm {
 
             }
         });
+
     }
-    public void optionInterface(){
+    //public void optionInterface()
+    private void scenarioDisplay(int scenarioNumber){
 
     }
 
