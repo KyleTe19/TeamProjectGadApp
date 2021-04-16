@@ -22,6 +22,7 @@ public class GameDisplayForm {
         option1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 myFrame = new JFrame("Option 1");
                 myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +35,7 @@ public class GameDisplayForm {
         option2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 myFrame = new JFrame("Option 2");
                 myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +47,41 @@ public class GameDisplayForm {
         });
 
     }
-    //public void optionInterface()
+    public void optionInterface(int scenario, int option) {
+        if (option == 1)
+        {
+            switch (scenario){
+                case 1:
+                    //set label
+                    break;
+                case 2:
+                    //set label
+                    break;
+                case 3:
+                    //set label
+                    break;
+                case 4:
+                    //set label
+                    break;
+            }
+        }
+        if (option == 2) {
+            switch (scenario) {
+                case 1:
+                    //set label
+                    break;
+                case 2:
+                    //set label
+                    break;
+                case 3:
+                    //set label
+                    break;
+                case 4:
+                    //set label
+                    break;
+            }
+        }
+    }
     private void scenarioDisplay(int scenarioNumber){
         if(scenarioNumber == 1){
             scenarioBody.setText("The class clown, Jimmy, in your class seems to be unlike himself for the past 2 weeks. You notice him yawning and he seems to be spaced out all day. Usually, he makes jokes nonstop and brightens the moods of everyone around the room. As a concerned classmate, what should you do?");
