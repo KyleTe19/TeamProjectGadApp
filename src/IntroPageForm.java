@@ -8,6 +8,7 @@ public class IntroPageForm {
     private JButton clickToStartButton;
     public static JFrame myFrame;
     public static int scenarioNumber;
+    public static int option;
 
     public IntroPageForm() {
         clickToStartButton.addActionListener(new ActionListener() {

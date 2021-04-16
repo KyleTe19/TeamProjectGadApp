@@ -15,7 +15,7 @@ public class GameDisplayForm {
         option1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                IntroPageForm.option = 1;
                 myFrame = new JFrame("Option 1");
                 myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,7 +28,7 @@ public class GameDisplayForm {
         option2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                IntroPageForm.option = 2;
                 myFrame = new JFrame("Option 2");
                 myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,41 +39,6 @@ public class GameDisplayForm {
             }
         });
 
-    }
-    public void optionInterface(int scenario, int option) {
-        if (option == 1)
-        {
-            switch (scenario){
-                case 1:
-                    //set label
-                    break;
-                case 2:
-                    //set label
-                    break;
-                case 3:
-                    //set label
-                    break;
-                case 4:
-                    //set label
-                    break;
-            }
-        }
-        if (option == 2) {
-            switch (scenario) {
-                case 1:
-                    //set label
-                    break;
-                case 2:
-                    //set label
-                    break;
-                case 3:
-                    //set label
-                    break;
-                case 4:
-                    //set label
-                    break;
-            }
-        }
     }
     private void scenarioDisplay(int scenarioNumber){
 
