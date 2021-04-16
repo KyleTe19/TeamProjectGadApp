@@ -27,6 +27,7 @@ public class IntroPageForm {
     public static void main(String[] args) {
         JFrame myFrame = new JFrame ("This is a Generalized Anxiety Training Simulation"); // Makes the frame
         myFrame.setContentPane(new IntroPageForm().welcomeForm); // attaches the panel to the frame
+        myFrame.requestFocusInWindow();
 
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

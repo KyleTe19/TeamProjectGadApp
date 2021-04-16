@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="118ca" class="javax.swing.JLabel">
+      <component id="118ca" class="javax.swing.JLabel" binding="score">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -16,7 +16,7 @@
           <text value="Score:"/>
         </properties>
       </component>
-      <component id="a6fec" class="javax.swing.JLabel">
+      <component id="a6fec" class="javax.swing.JLabel" binding="scenarioBody">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -24,7 +24,7 @@
           <text value="Scenario body (what the situation unfolding is)"/>
         </properties>
       </component>
-      <component id="3214" class="javax.swing.JLabel">
+      <component id="3214" class="javax.swing.JLabel" binding="scenario">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -32,7 +32,7 @@
           <text value="Scenario x"/>
         </properties>
       </component>
-      <component id="24b7e" class="javax.swing.JLabel">
+      <component id="24b7e" class="javax.swing.JLabel" binding="action1">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -40,7 +40,7 @@
           <text value="Response Action 1"/>
         </properties>
       </component>
-      <component id="523f7" class="javax.swing.JLabel">
+      <component id="523f7" class="javax.swing.JLabel" binding="action2">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -65,7 +65,7 @@
           <text value="Option 2"/>
         </properties>
       </component>
-      <component id="3c4e6" class="javax.swing.JLabel">
+      <component id="3c4e6" class="javax.swing.JLabel" binding="option1">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -73,7 +73,7 @@
           <text value="Label"/>
         </properties>
       </component>
-      <component id="26328" class="javax.swing.JLabel">
+      <component id="26328" class="javax.swing.JLabel" binding="option2">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
