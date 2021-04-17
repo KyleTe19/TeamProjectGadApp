@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IntroPageForm {
+    public static JFrame myFrame = new JFrame ("This is a Generalized Anxiety Training Simulation");
     public JPanel welcomeForm;
     private JButton clickToStartButton;
-    public static JFrame myFrame;
-    public static int scenarioNumber;
+    public static int scenarioNumber = 1;
     public static int option;
 
     public IntroPageForm() {
@@ -20,13 +20,13 @@ public class IntroPageForm {
                 myFrame.pack();
                 myFrame.setVisible(true);
 
-                scenarioNumber = 1;
+
 
             }
         });
     }
     public static void main(String[] args) {
-        JFrame myFrame = new JFrame ("This is a Generalized Anxiety Training Simulation"); // Makes the frame
+        //JFrame myFrame = new JFrame ("This is a Generalized Anxiety Training Simulation"); // Makes the frame
         myFrame.setContentPane(new IntroPageForm().welcomeForm); // attaches the panel to the frame
         myFrame.requestFocusInWindow();
 
