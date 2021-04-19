@@ -21,7 +21,7 @@ public class GameDisplayForm {
 
     public GameDisplayForm() {
         System.out.println(IntroPageForm.scenarioNumber);
-       // scenarioDisplay(IntroPageForm.scenarioNumber);
+        scenarioDisplay(IntroPageForm.scenarioNumber);
 
         option1Button.addActionListener(new ActionListener() {
             @Override
