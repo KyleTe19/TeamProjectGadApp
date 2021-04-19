@@ -18,7 +18,6 @@ public class GameDisplayForm {
     private JTextArea option2TextArea;
     public static JFrame myFrame;
 
-
     public GameDisplayForm() {
         System.out.println(IntroPageForm.scenarioNumber);
         scenarioDisplay(IntroPageForm.scenarioNumber);
