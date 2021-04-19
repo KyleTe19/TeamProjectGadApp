@@ -12,6 +12,7 @@ public class OptionInterfaceForm {
 
     public OptionInterfaceForm() {
         optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option);
+        IntroPageForm.scenarioNumber++;
         clickToContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -22,7 +23,7 @@ public class OptionInterfaceForm {
                 myFrame.pack();
                 myFrame.setVisible(true);
 
-                IntroPageForm.scenarioNumber++;
+
 
             }
         });
