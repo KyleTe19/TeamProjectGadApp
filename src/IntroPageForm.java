@@ -7,8 +7,10 @@ public class IntroPageForm {
     public static JFrame myFrame = new JFrame ("This is a Generalized Anxiety Training Simulation");
     public JPanel welcomeForm;
     private JButton clickToStartButton;
+    private JTextArea introPageBody;
     public static int scenarioNumber = 1;
     public static int option;
+
 
     public IntroPageForm() {
         clickToStartButton.addActionListener(new ActionListener() {
@@ -19,6 +21,7 @@ public class IntroPageForm {
                 myFrame.setPreferredSize(new Dimension(1000, 600));
                 myFrame.pack();
                 myFrame.setVisible(true);
+
 
 
 

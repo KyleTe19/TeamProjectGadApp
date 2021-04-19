@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 public class OptionInterfaceForm {
     public JPanel optionFeedback;
     private JButton clickToContinueButton;
-    private JLabel FirstFeedbackLine;
-    private JLabel SecondFeedbackLine;
-    private JLabel ThirdFeedbackLine;
-    private JLabel FourthFeedbackLine;
+    private JTextArea firstFeedbackLine;
+    private JTextArea secondFeedbackLine;
+    private JTextArea thirdFeedbackLine;
+    private JTextArea fourthFeedbackLine;
     public static JFrame myFrame;
 
     public OptionInterfaceForm() {
@@ -35,56 +35,56 @@ public class OptionInterfaceForm {
         {
             switch (scenario){
                 case 1:
-                    FirstFeedbackLine.setText("1");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("1");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 2:
-                    FirstFeedbackLine.setText("2");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("2");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 3:
-                    FirstFeedbackLine.setText("3");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("3");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 4:
-                    FirstFeedbackLine.setText("4");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("4");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
             }
         }
         if (option == 2) {
             switch (scenario) {
                 case 1:
-                    FirstFeedbackLine.setText("5");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("5");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 2:
-                    FirstFeedbackLine.setText("6");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("6");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 3:
-                    FirstFeedbackLine.setText("7");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("7");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
                 case 4:
-                    FirstFeedbackLine.setText("8");
-                    SecondFeedbackLine.setText("");
-                    ThirdFeedbackLine.setText("");
-                    FourthFeedbackLine.setText("");
+                    firstFeedbackLine.setText("8");
+                    secondFeedbackLine.setText("");
+                    thirdFeedbackLine.setText("");
+                    fourthFeedbackLine.setText("");
                     break;
             }
         }
