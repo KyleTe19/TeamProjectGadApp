@@ -16,14 +16,29 @@ public class GameDisplayForm {
     private JLabel score;
     private JTextArea option1TextArea;
     private JTextArea option2TextArea;
+    private JLabel displayImage;
     public static JFrame myFrame;
     public static int gameScore = 0;
+    private ImageIcon image1 = new ImageIcon();
+    private ImageIcon image2 = new ImageIcon();
+    private ImageIcon image3 = new ImageIcon();
 
     public GameDisplayForm() {
         System.out.println(IntroPageForm.scenarioNumber);
         scenarioDisplay(IntroPageForm.scenarioNumber);
         score.setText("Score: " + gameScore);
-
+        image1 = new ImageIcon(this.getClass().getResource("/Images/Scenario1Image.png"));
+        image2 = new ImageIcon(this.getClass().getResource("/Images/Scenario2Image.png"));
+        image3 = new ImageIcon(this.getClass().getResource("/Images/Scenario3Image.png"));
+        if (IntroPageForm.scenarioNumber == 1){
+            displayImage.setIcon(image1);
+        }
+        if (IntroPageForm.scenarioNumber == 2){
+            displayImage.setIcon(image2);
+        }
+        if (IntroPageForm.scenarioNumber == 3){
+            displayImage.setIcon(image3);
+        }
         option1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,8 +50,6 @@ public class GameDisplayForm {
                 myFrame.pack();
                 myFrame.setVisible(true);
                 gameScore += 500;
-
-
             }
         });
         option2Button.addActionListener(new ActionListener() {

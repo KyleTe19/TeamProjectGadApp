@@ -8,13 +8,21 @@ public class OptionInterfaceForm {
     private JButton clickToContinueButton;
     private JTextArea textArea1;
     private JTextArea textArea2;
+    private JLabel optionImage;
     public static JFrame myFrame;
-
+    private ImageIcon image1 = new ImageIcon();
+    private ImageIcon image2 = new ImageIcon();
     public OptionInterfaceForm() {
         optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option);
         IntroPageForm.scenarioNumber++;
-
-
+        image1 = new ImageIcon(this.getClass().getResource("/Images/AlmostThere.png"));
+        image2 = new ImageIcon(this.getClass().getResource("/Images/ThumbsUp.png"));
+        if (IntroPageForm.option == 1){
+            optionImage.setIcon(image1);
+        }
+        if (IntroPageForm.option == 2) {
+            optionImage.setIcon(image2);
+        }
         clickToContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -25,9 +33,6 @@ public class OptionInterfaceForm {
                 myFrame.pack();
                 myFrame.setVisible(true);
                 endingMessage(IntroPageForm.scenarioNumber);
-
-
-
             }
         });
     }

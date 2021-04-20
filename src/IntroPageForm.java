@@ -8,14 +8,14 @@ public class IntroPageForm {
     public JPanel welcomeForm;
     private JButton clickToStartButton;
     private JTextArea introPageBody;
-    private JLabel Image;
+    private JLabel image;
     public static int scenarioNumber = 1;
     public static int option;
-    private ImageIcon introImage = new ImageIcon("/images/Anxiety.png");
+    private ImageIcon introImage = new ImageIcon();
 
     public IntroPageForm() {
-
-        Image.setIcon(introImage);
+        image = new JLabel(String.valueOf(this.getClass().getResource("/images/Anxiety.png")));
+        image.setIcon(introImage);
         clickToStartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
