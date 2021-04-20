@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="welcomeForm" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1324" height="623"/>
+      <xy x="20" y="20" width="8311" height="6175"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <font size="22" style="1"/>
-          <text value="Welcome to this simulation where you will learn about Generalzied Anxiety Disorder"/>
+          <text value="Welcome to this simulation where you will learn about Generalzied Anxiety Disorder. "/>
         </properties>
       </component>
       <component id="9453" class="javax.swing.JTextArea" binding="introPageBody">
@@ -24,9 +24,10 @@
         <properties>
           <doubleBuffered value="false"/>
           <editable value="false"/>
+          <font name="Helvetica-Narrow" size="26"/>
           <lineWrap value="true"/>
           <opaque value="false"/>
-          <text value="You will run through a series of situations that will test you on situations and help you learn about interacting with people who have Generalize Anxiety Disorder or starting to show signs of it"/>
+          <text value="You will run through a series of situations that will test you on situations and help you learn about interacting with people who have Generalize Anxiety Disorder or starting to show signs of it."/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
           <wrapStyleWord value="true"/>

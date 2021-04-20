@@ -17,10 +17,12 @@ public class GameDisplayForm {
     private JTextArea option1TextArea;
     private JTextArea option2TextArea;
     public static JFrame myFrame;
+    public static int gameScore = 0;
 
     public GameDisplayForm() {
         System.out.println(IntroPageForm.scenarioNumber);
         scenarioDisplay(IntroPageForm.scenarioNumber);
+        score.setText("Score: " + gameScore);
 
         option1Button.addActionListener(new ActionListener() {
             @Override
@@ -32,6 +34,8 @@ public class GameDisplayForm {
                 myFrame.setPreferredSize(new Dimension(1000, 600));
                 myFrame.pack();
                 myFrame.setVisible(true);
+                gameScore += 500;
+
 
             }
         });
@@ -45,6 +49,7 @@ public class GameDisplayForm {
                 myFrame.setPreferredSize(new Dimension(1000, 600));
                 myFrame.pack();
                 myFrame.setVisible(true);
+                gameScore += 1000;
 
             }
         });
@@ -53,7 +58,6 @@ public class GameDisplayForm {
     private void scenarioDisplay(int chooseScenario){
         if(chooseScenario == 1){
             scenario.setText("Scenario 1");
-            score.setText("Score: 0");
             scenarioBody.setText("The class clown, Jimmy, in your class seems to be unlike himself for the past 2 weeks. You notice him yawning and he seems to be spaced out all day. Usually, he makes jokes nonstop and brightens the moods of everyone around the room. As a concerned classmate, what should you do?");
             option1TextArea.setText("I don’t know him too well so I feel uncomfortable confronting him about it. If anything" +
                     " he is probably just having some trouble outside of school and he might not want me to talk about it with a stranger.");
