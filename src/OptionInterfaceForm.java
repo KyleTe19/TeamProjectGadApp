@@ -8,7 +8,7 @@ public class OptionInterfaceForm {
     private JButton clickToContinueButton;
     private JTextArea textArea1;
     private JTextArea textArea2;
-    public static JFrame myFrame;
+    public static JFrame optionFrame;
 
     public OptionInterfaceForm() {
         optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option);
@@ -18,14 +18,17 @@ public class OptionInterfaceForm {
         clickToContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                myFrame = new JFrame("");
-                myFrame.setContentPane(new GameDisplayForm().mainDisplay);
-                myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                myFrame.setPreferredSize(new Dimension(1000, 600));
-                myFrame.pack();
-                myFrame.setVisible(true);
-                endingMessage(IntroPageForm.scenarioNumber);
+               /*
+               optionFrame = new JFrame("");
+                optionFrame.setContentPane(new GameDisplayForm().mainDisplay);
+                optionFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                optionFrame.setPreferredSize(new Dimension(1000, 600));
+                optionFrame.pack();
+                optionFrame.setVisible(true);
+                GameDisplayForm.GameDisplayFrame.dispose();
+                */
 
+                IntroPageForm.myFrame.setContentPane(new GameDisplayForm().mainDisplay);
 
 
             }

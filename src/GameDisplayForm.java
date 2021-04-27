@@ -16,7 +16,7 @@ public class GameDisplayForm {
     private JLabel score;
     private JTextArea option1TextArea;
     private JTextArea option2TextArea;
-    public static JFrame myFrame;
+    public static JFrame GameDisplayFrame;
     public static int gameScore = 0;
 
     public GameDisplayForm() {
@@ -28,13 +28,19 @@ public class GameDisplayForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 IntroPageForm.option = 1;
-                myFrame = new JFrame("Option 1");
-                myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
-                myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                myFrame.setPreferredSize(new Dimension(1000, 600));
-                myFrame.pack();
-                myFrame.setVisible(true);
+                /*
+                GameDisplayFrame = new JFrame("Option 1");
+                GameDisplayFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
+                GameDisplayFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                GameDisplayFrame.setPreferredSize(new Dimension(1000, 600));
+                GameDisplayFrame.pack();
+                GameDisplayFrame.setVisible(true);
                 gameScore += 500;
+                //IntroPageForm.myFrame.dispose();
+                OptionInterfaceForm.optionFrame.dispose();
+                 */
+                IntroPageForm.myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
+
 
 
             }
@@ -43,13 +49,18 @@ public class GameDisplayForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 IntroPageForm.option = 2;
-                myFrame = new JFrame("Option 2");
-                myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
-                myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                myFrame.setPreferredSize(new Dimension(1000, 600));
-                myFrame.pack();
-                myFrame.setVisible(true);
+                /*
+                GameDisplayFrame = new JFrame("Option 2");
+                GameDisplayFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
+                GameDisplayFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                GameDisplayFrame.setPreferredSize(new Dimension(1000, 600));
+                GameDisplayFrame.pack();
+                GameDisplayFrame.setVisible(true);
                 gameScore += 1000;
+                IntroPageForm.myFrame.dispose();
+                 */
+                IntroPageForm.myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
+
 
             }
         });
