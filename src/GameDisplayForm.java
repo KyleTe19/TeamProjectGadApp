@@ -22,7 +22,6 @@ public class GameDisplayForm {
     public GameDisplayForm() {
         System.out.println(IntroPageForm.scenarioNumber);
         scenarioDisplay(IntroPageForm.scenarioNumber);
-        score.setText("Score: " + gameScore);
 
         option1Button.addActionListener(new ActionListener() {
             @Override

@@ -13,6 +13,7 @@ public class OptionInterfaceForm {
     public OptionInterfaceForm() {
         optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option);
         IntroPageForm.scenarioNumber++;
+        System.out.println(IntroPageForm.scenarioNumber);
 
 
         clickToContinueButton.addActionListener(new ActionListener() {
@@ -29,6 +30,7 @@ public class OptionInterfaceForm {
                 */
 
                 IntroPageForm.myFrame.setContentPane(new GameDisplayForm().mainDisplay);
+                resultsFrame(IntroPageForm.scenarioNumber);
 
 
             }
@@ -96,6 +98,13 @@ public class OptionInterfaceForm {
         else{
 
         }
+
+    }
+    public void resultsFrame(int scenarioNumber){
+        if (scenarioNumber == 4) {
+            IntroPageForm.myFrame.setContentPane(new ResultsFrame().Results);
+        }
+        // Want to add score here and also a button that lets them play again or exit.
 
     }
 }
