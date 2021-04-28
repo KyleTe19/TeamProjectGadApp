@@ -13,19 +13,30 @@ public class OptionInterfaceForm {
     private ImageIcon image1 = new ImageIcon();
     private ImageIcon image2 = new ImageIcon();
     public OptionInterfaceForm() {
-        optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option);
+        optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option, GameDisplayForm.randomOption);
         IntroPageForm.scenarioNumber++;
         image1 = new ImageIcon(this.getClass().getResource("/Images/AlmostThere.png"));
         image2 = new ImageIcon(this.getClass().getResource("/Images/ThumbsUp.png"));
-        if (IntroPageForm.option == 1){
-            optionImage.setIcon(image1);
+        if(GameDisplayForm.randomOption == 0) {
+            if (IntroPageForm.option == 1) {
+                optionImage.setIcon(image1);
+            }
+            if (IntroPageForm.option == 2) {
+                optionImage.setIcon(image2);
+            }
         }
-        if (IntroPageForm.option == 2) {
-            optionImage.setIcon(image2);
+        if(GameDisplayForm.randomOption == 1){
+            if (IntroPageForm.option == 1){
+                optionImage.setIcon(image2);
+            }
+            if (IntroPageForm.option == 2) {
+                optionImage.setIcon(image1);
+            }
         }
         clickToContinueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                GameDisplayForm.setRandomOptions();
                 myFrame = new JFrame("");
                 myFrame.setContentPane(new GameDisplayForm().mainDisplay);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,9 +47,15 @@ public class OptionInterfaceForm {
             }
         });
     }
-    public void optionInterface(int scenario, int option) {
-        if (option == 1)
-        {
+    public void optionInterface(int scenario, int option, int random) {
+        int result;
+        if((option + random) % 2 == 0){
+            result = 0;
+        }
+        else{
+            result = 1;
+        }
+        if (result == 1) {
             switch (scenario){
                 case 1:
                     textArea1.setText("It is important to recognize mental health issues even in individuals who you are not very close with. If unrecognized by anyone, mental health conditions can become harder to gain control of. One of the symptoms of many mental health conditions is lack of sleep which induces tiredness. This then will lead to having difficulty concentrating/ seeming spaced out. ");
@@ -57,7 +74,7 @@ public class OptionInterfaceForm {
                     break;
             }
         }
-        if (option == 2) {
+        if (result == 0) {
             switch (scenario) {
                 case 1:
                     textArea1.setText("Good choice! You were able to understand that something was wrong with your classmate and decided to talk to them despite not having a very close friendship. The first step as a mental health first aider is identifying a potential problem in an individual. Be sure that you are prepared to listen because oftentimes the best thing you can do is just be someone that the affected person can talk to. ");

@@ -19,6 +19,7 @@ public class IntroPageForm {
         clickToStartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                GameDisplayForm.setRandomOptions();
                 myFrame.setContentPane(new GameDisplayForm().mainDisplay);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 myFrame.setPreferredSize(new Dimension(1000, 600));
