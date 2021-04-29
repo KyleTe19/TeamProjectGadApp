@@ -8,14 +8,34 @@ public class Results {
     private JTextField textField;
     private JButton playAgainButton;
     private JButton exitButton;
+    private int resetCount;
 
     public Results(){
         scoreLabel.setText(String.valueOf(GameDisplayForm.gameScore) +"/3000");
        // endingMessage(IntroPageForm.scenarioNumber);
 
+        if (resetCount >= 1){
+            playAgainButton.setEnabled(false);
+        }
+
         playAgainButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                if (GameDisplayForm.getModuleNumber() == 1){
+                    GameDisplayForm.setRandomModule(0);
+
+                }
+                if (GameDisplayForm.getModuleNumber() == 0 ){
+                    GameDisplayForm.setRandomModule(1);
+                }
+                resetCount++;
+                IntroPageForm.scenarioNumber = 1;
+                GameDisplayForm.gameScore = 0;
+                IntroPageForm.myFrame.setContentPane(new GameDisplayForm().mainDisplayPanel);
+
+
+
 
             }
         });

@@ -20,6 +20,8 @@ public class IntroPageForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GameDisplayForm.setRandomOptions();
+                GameDisplayForm.setRandomModule();
+                System.out.println(GameDisplayForm.getModuleNumber());
                 myFrame.setContentPane(new GameDisplayForm().mainDisplayPanel);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 myFrame.setPreferredSize(new Dimension(1000, 800));
