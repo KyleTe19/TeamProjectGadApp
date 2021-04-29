@@ -20,9 +20,9 @@ public class IntroPageForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GameDisplayForm.setRandomOptions();
-                myFrame.setContentPane(new GameDisplayForm().mainDisplay);
+                myFrame.setContentPane(new GameDisplayForm().mainDisplayPanel);
                 myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                myFrame.setPreferredSize(new Dimension(1000, 600));
+                myFrame.setPreferredSize(new Dimension(1000, 800));
                 myFrame.pack();
                 myFrame.setVisible(true);
 
@@ -39,7 +39,7 @@ public class IntroPageForm {
 
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        myFrame.setPreferredSize(new Dimension(1000,600));
+        myFrame.setPreferredSize(new Dimension(1000,800));
         myFrame.setResizable(true);
 
         myFrame.pack(); // puts all components into the frame
