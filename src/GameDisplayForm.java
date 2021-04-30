@@ -21,6 +21,9 @@ public class GameDisplayForm {
     private ImageIcon image1 = new ImageIcon();
     private ImageIcon image2 = new ImageIcon();
     private ImageIcon image3 = new ImageIcon();
+    private ImageIcon image4 = new ImageIcon();
+    private ImageIcon image5 = new ImageIcon();
+    private ImageIcon image6 = new ImageIcon();
     static Random rand = new Random();
     public static int randomOption;
     public static int branch;
@@ -31,14 +34,32 @@ public class GameDisplayForm {
         image1 = new ImageIcon(this.getClass().getResource("/Images/Scenario1Image.png")); //adds images
         image2 = new ImageIcon(this.getClass().getResource("/Images/Scenario2Image.png")); //adds images
         image3 = new ImageIcon(this.getClass().getResource("/Images/Scenario3Image.png")); //adds images
-        if (IntroPageForm.scenarioNumber == 1){ //determines what image is used and sets the icons
-            displayImage.setIcon(image1);
+        image4 = new ImageIcon(this.getClass().getResource("/Images/Lunch.png")); //adds images
+        image5 = new ImageIcon(this.getClass().getResource("/Images/boardGame.png")); //adds images
+        image6 = new ImageIcon(this.getClass().getResource("/Images/bed.png")); //adds images
+        if(moduleNumber == 1) {
+            if (IntroPageForm.scenarioNumber == 1) { //determines what image is used and sets the icons
+                displayImage.setIcon(image1);
+            }
+            if (IntroPageForm.scenarioNumber == 2) {
+                displayImage.setIcon(image2);
+            }
+            if (IntroPageForm.scenarioNumber == 3) {
+                displayImage.setIcon(image3);
+            }
         }
-        if (IntroPageForm.scenarioNumber == 2){
-            displayImage.setIcon(image2);
-        }
-        if (IntroPageForm.scenarioNumber == 3){
-            displayImage.setIcon(image3);
+        if(moduleNumber == 2){
+            if (IntroPageForm.scenarioNumber == 1) { //determines what image is used and sets the icons
+                displayImage.setIcon(image4);
+            }
+            if (IntroPageForm.scenarioNumber == 2) {
+                if(branch == 1){
+                    displayImage.setIcon(image5);
+                }
+                if(branch == 2){
+                    displayImage.setIcon(image6);
+                }
+            }
         }
         option1Button.addActionListener(new ActionListener() {
             @Override
