@@ -47,26 +47,4 @@ public class Results {
         textField.setEditable(false);
 
     }
-    private void endingMessage(int scenarioNumber){
-        if(GameDisplayForm.gameScore == 3000 && scenarioNumber > 3){
-            JOptionPane.showInputDialog(null, "Great Job! you handled all of the scenarios perfectly and helped your " +
-                    "classmate feel better/ not feel alone in this world. The application will now exit, we hope " +
-                    "this training will help you in the future or at least make you realize how common mental health " +
-                    "conditions are!");
-            JOptionPane.showInputDialog(null, "The program will now terminate");
-            System.exit(0);
-
-        }
-        else if (GameDisplayForm.gameScore >= 1500 && GameDisplayForm.gameScore < 3000 && scenarioNumber > 3){
-            JOptionPane.showMessageDialog(null, "Good Job! you may not have handled all the scenarios with the ideal " +
-                    "response but that is perfectly fine! From this scenario you learned about interacting with " +
-                    "people who may have a mental health condition.");
-            JOptionPane.showMessageDialog(null, "The program will now terminate");
-            System.exit(0);
-        }
-        else{
-
-        }
-
-    }
 }
