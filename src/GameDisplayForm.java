@@ -23,16 +23,15 @@ public class GameDisplayForm {
     private ImageIcon image3 = new ImageIcon();
     static Random rand = new Random();
     public static int randomOption;
+    public static int branch;
     public static int moduleNumber;
 
     public GameDisplayForm() {
-
-        System.out.println(IntroPageForm.scenarioNumber);
-        scenarioDisplay(IntroPageForm.scenarioNumber, moduleNumber);
-        image1 = new ImageIcon(this.getClass().getResource("/Images/Scenario1Image.png"));
-        image2 = new ImageIcon(this.getClass().getResource("/Images/Scenario2Image.png"));
-        image3 = new ImageIcon(this.getClass().getResource("/Images/Scenario3Image.png"));
-        if (IntroPageForm.scenarioNumber == 1){
+        scenarioDisplay(IntroPageForm.scenarioNumber, getModuleNumber()); //displays the scenario and options to the user
+        image1 = new ImageIcon(this.getClass().getResource("/Images/Scenario1Image.png")); //adds images
+        image2 = new ImageIcon(this.getClass().getResource("/Images/Scenario2Image.png")); //adds images
+        image3 = new ImageIcon(this.getClass().getResource("/Images/Scenario3Image.png")); //adds images
+        if (IntroPageForm.scenarioNumber == 1){ //determines what image is used and sets the icons
             displayImage.setIcon(image1);
         }
         if (IntroPageForm.scenarioNumber == 2){
@@ -43,7 +42,7 @@ public class GameDisplayForm {
         }
         option1Button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { //option button 1
                 IntroPageForm.option = 1;
 
                 IntroPageForm.myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
@@ -51,7 +50,7 @@ public class GameDisplayForm {
         });
         option2Button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { //option button 2
                 IntroPageForm.option = 2;
 
                 IntroPageForm.myFrame.setContentPane(new OptionInterfaceForm().optionFeedback);
@@ -60,31 +59,35 @@ public class GameDisplayForm {
         });
 
     }
-    public static void setRandomOptions(){
+    public static void setRandomOptions(){ //rolls to see if the options will be swapped
         randomOption = rand.nextInt(2);
     }
 
-    public int getRandomOptions(){
+    public int getRandomOptions(){ //gets randomOption results
         return randomOption;
     }
 
-    public static void setRandomModule() {moduleNumber = rand.nextInt(2);}
+    public static void setRandomModule(){ //rolls to see what module is being used
+        moduleNumber = rand.nextInt(2) + 1;
+    }
 
-    public static void setRandomModule(int value){
+    public static void setRandomModule(int value){ //used to manually set the module
         moduleNumber = value;
     }
 
-    public static int getModuleNumber() { return moduleNumber;}
+    public static int getModuleNumber() { //gets what module is being used
+        return moduleNumber;
+    }
 
-    private void scenarioDisplay(int chooseScenario, int trainingModule) {
-        if (getModuleNumber() == 0) {
+    private void scenarioDisplay(int chooseScenario, int trainingModule) { //sets scenario and option text based on the module
+        if (trainingModule == 1) { //scenarios and options of module 1
 
-            if (chooseScenario == 1) {
+            if (chooseScenario == 1) { //scenario 1
                 scenario.setText("Scenario 1");
                 scenarioBody.setText("The class clown, Jimmy, seems to have been unlike himself for the past 2 weeks. " +
                         "You notice him yawning and he seems to be spaced out all day. Usually, he makes jokes nonstop " +
                         "and brightens the mood of the classroom completely. As a fellow classmate, what should you do?");
-                if (getRandomOptions() == 0) {
+                if (getRandomOptions() == 0) { //check to see if options have been swapped
                     option1TextArea.setText("You walk up and tell him, that everything will be alright and everything " +
                             "will workout out in the end, no need to worry");
                     option2TextArea.setText("You feel comfortable enough to pull him aside after class and ask him if everything is " +
@@ -97,13 +100,13 @@ public class GameDisplayForm {
                             " he is probably just having some trouble outside of school and he might not want me to talk about it with a stranger.");
                 }
             }
-            if (chooseScenario == 2) {
+            if (chooseScenario == 2) { //scenario 2
                 scenario.setText("Scenario 2");
                 scenarioBody.setText(" A few days later it is presentation day in your shared class with Jimmy and you notice " +
                         "he seems to be on-edge with his legs bouncing frantically. During his presentation you " +
                         "notice his voice is wavering and he is sweating buckets. After the presentation you see Jimmy quietly" +
                         " slip out of the room without telling the teacher.");
-                if (getRandomOptions() == 0) {
+                if (getRandomOptions() == 0) { //check to see if options have been swapped
                     option1TextArea.setText("You ask the teacher if you can go use the restroom so that you can make sure" +
                             " Jimmy isn't doing anything stupid. You see him sitting against a wall and are glad that he " +
                             "is okay and then head to the restroom.");
@@ -118,7 +121,7 @@ public class GameDisplayForm {
                             "is okay and then head to the restroom.");
                 }
             }
-            if (chooseScenario == 3) {
+            if (chooseScenario == 3) { //scenario 3
                 scenario.setText("Scenario 3");
                 scenarioBody.setText(" Later in the day you walk up to Jimmy, asking for his phone number so you guys can" +
                         " stay in contact after school hours. After a week of texting back and forth, he thanks you over " +
@@ -127,7 +130,7 @@ public class GameDisplayForm {
                         "be able to pay for him to go to college and those money issues are causing a rift in his family. " +
                         "He is having a difficult time not feeling like he is the reason his family is having a tough " +
                         "time. ");
-                if (getRandomOptions() == 0) {
+                if (getRandomOptions() == 0) { //check to see if options have been swapped
                     option1TextArea.setText("You deny that his family would ever think that about him and you tell him " +
                             "that he should not worry about money situations because there are many scholarships available.");
                     option2TextArea.setText("You read his texts about his feelings and once you are done you text him back that you " +
@@ -142,14 +145,14 @@ public class GameDisplayForm {
                 }
             }
         }
-        if (getModuleNumber() == 1){
-            if (chooseScenario == 1) {
+        if (trainingModule == 2){ //scenarios and options of module 2
+            if (chooseScenario == 1) { //scenario 1
                 scenario.setText("Scenario 1");
                 scenarioBody.setText("Your best friend Amanda seems to be worrying a lot about her upcoming academic tests." +
                         " While eating lunch with her, you notice her yawning frequently and lacking her usual cheery energy. " +
                         "We hangout every weekend, but Amanda says she can’t because she is really worried about getting " +
                         "good grades on the upcoming tests.");
-                if (getRandomOptions() == 0) {
+                if (getRandomOptions() == 0) { //check to see if options have been swapped
                     option1TextArea.setText("You let her know that she can call you if she ever needs a break from " +
                             "studying over the weekend.");
                     option2TextArea.setText("You let her know that you are there to listen to her if she needs to talk " +
@@ -162,45 +165,46 @@ public class GameDisplayForm {
                             " studying over the weekend.");
                 }
             }
-            if (chooseScenario == 2) {
-                scenario.setText("Scenario 2");
-                scenarioBody.setText(" The weekend after all of Amanda’s tests, she invites you over to her house. " +
-                        "You go to her room and notice it is messier than usual. You guys end up playing a board game " +
-                        "but when something does not go her way she gets irritated easily which is not like her.");
-                if (getRandomOptions() == 0) {
-                    option1TextArea.setText("When finished with the game, you offer to help clean her room because a " +
-                            " messy environment can decrease a person's mood and productivity.");
-                    option2TextArea.setText("When finished with the game, you offer up your ear in case she has " +
-                            "something that she needs to talk about.");
+            if (chooseScenario == 2) { //scenario 2
+                if (branch == 1) { //determines scenario direction based on last scenario's option
+                    scenario.setText("Scenario 2");
+                    scenarioBody.setText(" The weekend after all of Amanda’s tests, she invites you over to her house. " +
+                            "You go to her room and notice it is messier than usual. You guys end up playing a board game " +
+                            "but when something does not go her way she gets irritated easily which is not like her.");
+                    if (getRandomOptions() == 0) { //check to see if options have been swapped
+                        option1TextArea.setText("When finished with the game, you offer to help clean her room because a " +
+                                " messy environment can decrease a person's mood and productivity.");
+                        option2TextArea.setText("When finished with the game, you offer up your ear in case she has " +
+                                "something that she needs to talk about.");
+                    }
+                    if (getRandomOptions() == 1) {
+                        option1TextArea.setText("When finished with the game, you offer up your ear in case she has " +
+                                "something that she needs to talk about.");
+                        option2TextArea.setText("When finished with the game, you offer to help clean her room because a " +
+                                " messy environment can decrease a person's mood and productivity.");
+                    }
                 }
-                if (getRandomOptions() == 1) {
-                    option1TextArea.setText("When finished with the game, you offer up your ear in case she has " +
-                            "something that she needs to talk about.");
-                    option2TextArea.setText("When finished with the game, you offer to help clean her room because a " +
-                            " messy environment can decrease a person's mood and productivity.");
+                if (branch == 2) {
+                    scenario.setText("Scenario 2");
+                    scenarioBody.setText("While at Amanda’s house on the weekend she opens up to you about how she is " +
+                            "feeling. She feels like if she does not pass her upcoming tests that she will not be able to " +
+                            "get into a good college. Her parents want her to go to Yale and she really wants to live up to " +
+                            "their expectations.");
+                    if (getRandomOptions() == 0) { //check to see if options have been swapped
+                        option1TextArea.setText("Let Amanda know that she should be doing things for herself more than " +
+                                "anyone else, live for yourself and make your own decisions.");
+                        option2TextArea.setText("You tell her that you can’t possibly understand what she is going through " +
+                                "but you are here and willing to listen to her at all times.");
+                    }
+                    if (getRandomOptions() == 1) {
+                        option1TextArea.setText("You tell her that you can’t possibly understand what she is going through " +
+                                "but you are here and willing to listen to her at all times.");
+                        option2TextArea.setText("Let Amanda know that she should be doing things for herself more than " +
+                                "anyone else, live for yourself and make your own decisions.");
+
+                    }
                 }
             }
-            if (chooseScenario == 3) {
-                scenario.setText("Scenario 3");
-                scenarioBody.setText("While at Amanda’s house on the weekend she opens up to you about how she is " +
-                        "feeling. She feels like if she does not pass her upcoming tests that she will not be able to " +
-                        "get into a good college. Her parents want her to go to Yale and she really wants to live up to " +
-                        "their expectations.");
-                if (getRandomOptions() == 0) {
-                    option1TextArea.setText("Let Amanda know that she should be doing things for herself more than " +
-                            "anyone else, live for yourself and make your own decisions.");
-                    option2TextArea.setText("You tell her that you can’t possibly understand what she is going through " +
-                            "but you are here and willing to listen to her at all times.");
-                }
-                if (getRandomOptions() == 1) {
-                    option1TextArea.setText("You tell her that you can’t possibly understand what she is going through " +
-                            "but you are here and willing to listen to her at all times.");
-                    option2TextArea.setText("Let Amanda know that she should be doing things for herself more than " +
-                            "anyone else, live for yourself and make your own decisions.");
-
-                }
-            }
-
         }
     }
 }

@@ -13,31 +13,24 @@ public class Results {
     public Results(){
         scoreLabel.setText(String.valueOf(GameDisplayForm.gameScore) +"/3000");
        // endingMessage(IntroPageForm.scenarioNumber);
-
-
         replay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (GameDisplayForm.getModuleNumber() == 1){
-                    GameDisplayForm.setRandomModule(0);
-
-
-                }
-                else if (GameDisplayForm.getModuleNumber() == 0 ){
+                if (GameDisplayForm.getModuleNumber() == 2){
                     GameDisplayForm.setRandomModule(1);
 
+
                 }
-                replay.setEnabled(false);
+                else if (GameDisplayForm.getModuleNumber() == 1 ){
+                    GameDisplayForm.setRandomModule(2);
+
+                }
                 resetCount++;
                 System.out.println("How many resets" + resetCount);
                 IntroPageForm.scenarioNumber = 1;
                 GameDisplayForm.gameScore = 0;
                 IntroPageForm.myFrame.setContentPane(new GameDisplayForm().mainDisplayPanel);
-
-
-
-
             }
         });
         exitButton.addActionListener(new ActionListener() {
