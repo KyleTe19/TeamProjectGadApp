@@ -12,6 +12,7 @@ public class IntroPageForm {
     public static int scenarioNumber = 1;
     public static int option;
     private ImageIcon introImage = new ImageIcon();
+    private Object GameDisplayForm;
 
     public IntroPageForm() {
         image = new JLabel(String.valueOf(this.getClass().getResource("/images/Anxiety.png")));
