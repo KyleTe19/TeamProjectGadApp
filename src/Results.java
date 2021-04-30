@@ -6,7 +6,7 @@ public class Results {
     public JPanel resultsPanel;
     private JLabel scoreLabel;
     private JTextField textField;
-    private JButton playAgainButton;
+    private JButton replay;
     private JButton exitButton;
     private int resetCount;
 
@@ -14,22 +14,23 @@ public class Results {
         scoreLabel.setText(String.valueOf(GameDisplayForm.gameScore) +"/3000");
        // endingMessage(IntroPageForm.scenarioNumber);
 
-        if (resetCount >= 1){
-            playAgainButton.setEnabled(false);
-        }
 
-        playAgainButton.addActionListener(new ActionListener() {
+        replay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 if (GameDisplayForm.getModuleNumber() == 1){
                     GameDisplayForm.setRandomModule(0);
 
+
                 }
-                if (GameDisplayForm.getModuleNumber() == 0 ){
+                else if (GameDisplayForm.getModuleNumber() == 0 ){
                     GameDisplayForm.setRandomModule(1);
+
                 }
+                replay.setEnabled(false);
                 resetCount++;
+                System.out.println("How many resets" + resetCount);
                 IntroPageForm.scenarioNumber = 1;
                 GameDisplayForm.gameScore = 0;
                 IntroPageForm.myFrame.setContentPane(new GameDisplayForm().mainDisplayPanel);

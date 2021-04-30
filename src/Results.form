@@ -53,7 +53,7 @@
           <text value="https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad/index.shtml"/>
         </properties>
       </component>
-      <component id="92c3e" class="javax.swing.JButton" binding="playAgainButton">
+      <component id="92c3e" class="javax.swing.JButton" binding="replay">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
