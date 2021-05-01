@@ -3,7 +3,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+/**
+ * This class will display the main GUI, is where the scenario is described and the possible options to respond with
+ * are. The frame will include a picture along with 2 buttons so the user can choose how to act.
+ *
+ * @author Kyle Techentin, Ethan Andujar
+ * @version 1.0
+ * @since 2021/4/30
+ *
+ */
 public class GameDisplayForm {
+    // GUI form objects
     private JButton option2Button;
     private JButton option1Button;
     public JPanel mainDisplayPanel;
@@ -17,18 +27,30 @@ public class GameDisplayForm {
     private JTextArea option1TextArea;
     private JTextArea option2TextArea;
     private JLabel displayImage;
+
+    // Total of the score
     public static int gameScore = 0;
+
+    // Image icons so the images can be set on the labels
     private ImageIcon image1 = new ImageIcon();
     private ImageIcon image2 = new ImageIcon();
     private ImageIcon image3 = new ImageIcon();
     private ImageIcon image4 = new ImageIcon();
     private ImageIcon image5 = new ImageIcon();
     private ImageIcon image6 = new ImageIcon();
+
+    // Instantiation of random number generator
     static Random rand = new Random();
+
+    // Variables to figure out how the story progresses
     public static int randomOption;
     public static int branch;
     public static int moduleNumber;
 
+    /**
+     *   This method will set all the images, set the code for what happens if a button is hit, and also randomize
+     *   what happens a certain button is pressed each time the user runs through the program.
+     */
     public GameDisplayForm() {
         scenarioDisplay(IntroPageForm.scenarioNumber, getModuleNumber()); //displays the scenario and options to the user
         image1 = new ImageIcon(this.getClass().getResource("/Images/Scenario1Image.png")); //adds images
@@ -80,26 +102,52 @@ public class GameDisplayForm {
         });
 
     }
+
+    /**
+     * This method will generate a random number to see which button houses the correct answer
+     */
     public static void setRandomOptions(){ //rolls to see if the options will be swapped
         randomOption = rand.nextInt(2);
     }
 
+    /**
+     * method to retrieve the randomOption field that is used to determine which button houses right answer
+     *
+     * @return a number that controls an if statement for the placement of the correct answer
+     */
     public int getRandomOptions(){ //gets randomOption results
         return randomOption;
     }
 
+    /**
+     * a method to generate which module will be the first to run
+     */
     public static void setRandomModule(){ //rolls to see what module is being used
         moduleNumber = rand.nextInt(2) + 1;
     }
 
+    /**
+     * a method that will manually allow the module to be run
+     * @param value
+     */
     public static void setRandomModule(int value){ //used to manually set the module
         moduleNumber = value;
     }
 
-    public static int getModuleNumber() { //gets what module is being used
+    /**
+     * Gets what module in being ran at the moment
+     * @return the current module
+     */
+    public static int getModuleNumber() {
         return moduleNumber;
     }
 
+    /**
+     * the method that sets up th GUI. based on the two params it will decide which module and scenario to be displayed
+     * on the GUI. It will also set the main frame to the next frame once it is done with its procedure.
+     * @param chooseScenario
+     * @param trainingModule
+     */
     private void scenarioDisplay(int chooseScenario, int trainingModule) { //sets scenario and option text based on the module
         if (trainingModule == 1) { //scenarios and options of module 1
 

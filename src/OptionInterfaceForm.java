@@ -3,16 +3,31 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is used for determine which options will be displayed on the GUI and switching to the next GUI.
+ * PLaces the images in th right place and totals the score that will be displayed on the results GUI frame
+ *
+ * @author Kyle Techentin, Ethan Andujar
+ * @version 1.0
+ * @since 2021/4/30
+ */
 public class OptionInterfaceForm {
+    // Specified GUI for the feedback
     public JPanel optionFeedback;
+    // GUI objects
     private JButton clickToContinueButton;
     private JTextArea textArea1;
     private JTextArea textArea2;
     private JLabel optionImage;
     private JLabel Title;
+    // Used to update the images of options
     private ImageIcon image1 = new ImageIcon();
     private ImageIcon image2 = new ImageIcon();
 
+    /**
+     * This method sets up the option interface GUI, initializes the images for the options
+     * and includes the code for button presses.
+     */
     public OptionInterfaceForm() {
         optionInterface(IntroPageForm.scenarioNumber, IntroPageForm.option, GameDisplayForm.randomOption, GameDisplayForm.moduleNumber, GameDisplayForm.branch); //displays option results
 
@@ -48,11 +63,21 @@ public class OptionInterfaceForm {
                     }
                 if(GameDisplayForm.getModuleNumber() == 2) //cuts off module 2 after 2 scenarios
                     if (IntroPageForm.scenarioNumber == 3){
-                        IntroPageForm.myFrame.setContentPane(new Results().resultsPanel); //runs results
+                        IntroPageForm.myFrame.setContentPane(new Results().resultsPanel);//runs results
                     }
             }
         });
     }
+
+    /**
+     * This method determines which scenario is being run through the parameters and decides what
+     * text needs to be set on the GUI. This is also where the new frame is set and score is totaled.
+     * @param scenario
+     * @param option
+     * @param random
+     * @param module
+     * @param branch
+     */
     public void optionInterface(int scenario, int option, int random, int module, int branch) { //informs user the results of their choice
         int result;
         if((option + random) % 2 == 0){ //determines if the options have been swapped
